@@ -27,6 +27,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>
+                        <th>Profile</th>
                         <th>Name</th>
                         <th>E-Mail</th>
                         <th>Tel Number</th>
@@ -39,7 +40,8 @@
                 <tbody>
                     <?php while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) { ?>
                         <tr>
-                            <td class="text-center"><?= htmlspecialchars($row['id']); ?></td>
+                            <td class="text-center"><?=htmlspecialchars($row['id']); ?></td>
+                            <td><img src="../assets/imgs/<?= htmlspecialchars($row['profile_image']); ?>" alt="" style="width: 100px;" ></td>
                             <td><?= htmlspecialchars($row['first_name']) . " " . htmlspecialchars($row['last_name']); ?></td>
                             <td class="text-center"><?=htmlspecialchars($row['email']); ?></td>
                             <td class="text-center"><?=htmlspecialchars($row['phone']); ?></td>
