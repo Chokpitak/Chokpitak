@@ -24,7 +24,7 @@
         <?php include '../backend/components/header2.php'; ?>
             <main class="p-4 flex-grow-1">
                 <h2>แก้ไขสินค้า</h2>
-                <form action="controls/edit_product.php" method="POST">
+                <form action="controls/edit_product.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= $user['id']?>">
                 <div class="mb-3">
                     <label for="">Menu</label>
@@ -37,6 +37,10 @@
                 <div class="mb-3">
                     <label for="">Price</label>
                     <input type="text" name="price" class="form-control" value="<?= htmlspecialchars($user['price']); ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="">Picture</label>
+                    <input type="file" name="profile_image" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary">บันทึกการแก้ไข</button>
                 <button type="reset" class="btn btn-danger">รีเซ็ท</button>
