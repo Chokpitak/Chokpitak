@@ -28,15 +28,22 @@
                     <div class="row">
                         <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
                             <div class="col-md-4 mb-4">
-                                <div class="card">
-                                    <div class="card-body" style="background: linear-gradient(to right,rgb(133, 224, 252),rgb(0, 172, 252));">
-                                        <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
-                                        <p class="card-text"><strong>รายละเอียด:</strong> <?php echo htmlspecialchars($row['description']); ?></p>
-                                        <p class="card-text"><strong>ราคา:</strong> <?php echo number_format($row['price'], 2); ?></p>
-                                        <p class="card-text"><strong>วันที่เพิ่มสินค้า:</strong> <?php echo htmlspecialchars($row['created_at']); ?></p>
+                                <div class="card h-100 d-flex flex-column rounded-5 shadow">
+                                    <div class="card-body d-flex flex-column" style="background: linear-gradient(to right,rgb(133, 224, 252),rgb(0, 172, 252));">
+            
+                                        <img src="/IT_Website/assets/imgs/<?= htmlspecialchars($row['profile_image']); ?>" 
+                                        alt="<?= htmlspecialchars($row['product_name']); ?>" 
+                                        class="rounded-5 mb-3"
+                                        style="width: 100%; max-height: 200px; object-fit: cover;">
+
+                                        <h5 class="card-title"><?= htmlspecialchars($row['product_name']); ?></h5>
+                                        <p class="card-text"><strong>รายละเอียด:</strong> <?= htmlspecialchars($row['description']); ?></p>
+                                        <p class="card-text"><strong>ราคา:</strong> <?= number_format($row['price'], 2); ?></p>
+                                        <p class="card-text mt-auto"><strong>วันที่เพิ่มสินค้า:</strong> <?= htmlspecialchars($row['created_at']); ?></p>
                                     </div>
                                 </div>
                             </div>
+
                         <?php } ?>
                     </div>
                 </div>
